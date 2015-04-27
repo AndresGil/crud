@@ -1,5 +1,6 @@
 <?php
 
+
 define ("APPLICATION_PATH", "../modules/Application");
 define ("VENDOR_PATH", "../vendor");
 define ("ROOT_PATH", "../");

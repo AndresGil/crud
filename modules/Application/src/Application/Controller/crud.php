@@ -39,7 +39,7 @@ switch($request['action'])
         }
         else
         {                       
-            $user = getUser($request['params']['id']);
+            $user = getUser($config['database'], $request['params']['id']);
             $content = renderView("../modules/Application/views/crud/update.phtml",
                               array('fieldsLine'=>$user)
                     );
@@ -52,14 +52,14 @@ switch($request['action'])
         {
             if ($_POST['borrar'] === "SI")
             {
-                deleteUser($_POST['id']);
+                deleteUser($_POST['id'] , $config['database']);
             }               
             header("Location: /crud/select");    
         }
         else
         {     
-            $user = getUser($request['params']['id']);
-            $content = renderView("../modules/Application/views/users/delete.phtml",
+            $user = getUser($config['database'], $request['params']['id']);
+            $content = renderView("../modules/Application/views/crud/delete.phtml",
                 array('user'=>$user)
             );
         }
