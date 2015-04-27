@@ -1,5 +1,12 @@
 <?php 
 $user = $viewData['user'];
+
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+echo "Request: ".$request['params']['id'];
+die;
+
 ?>
 <form method ="POST" action="/crud/delete">
     Estas seguro que quieres borrar el usuario: <?=$user['name'];?>?

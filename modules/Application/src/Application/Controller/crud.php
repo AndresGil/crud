@@ -18,7 +18,7 @@ switch($request['action'])
                     );   
     break;
 
-    case 'insert':        
+    case 'insert':        //funciona perfectamente
         if($_POST)
         {              
             $user = setUser($_POST);
@@ -32,14 +32,21 @@ switch($request['action'])
 
     case 'update':
         echo "esto es update";
+
+        echo "<pre>";
+            print_r($request['params']['iduser']);
+        echo "</pre>";    
+        die;
+        
+        
         if ($_POST)
         {
-            $user = putUser($_POST['id'], $_POST);
+            $user = putUser($_POST['iduser'], $_POST);
             header("Location: /crud/select");
         }
         else
         {                       
-            $user = getUser($config['database'], $request['params']['id']);
+            $user = getUser($config['database'], $request['params']['iduser']);
             $content = renderView("../modules/Application/views/crud/update.phtml",
                               array('fieldsLine'=>$user)
                     );

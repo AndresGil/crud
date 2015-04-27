@@ -1,4 +1,13 @@
 <?php
+/**
+ * Muestra todos los usuarios en una tabla
+ * 
+ * @param  $config -> configuracion de la base de datos
+ * @return $users -> Es la fila encontrada
+ */
+
+
+
 
 function getUsers($config)
 {

@@ -1,28 +1,16 @@
 <?php
 function getUser($config, $id)
 {
-
-    
+  
 //     echo "<\br> Esto es getUser <\br>";
 //     echo "<pre>Id:";
 //     print_r($id);
-//     echo "</pre>";
-    
-    
+//     echo "</pre>";   
 //     echo "<pre>Config:";
 //     print_r($config);
 //     echo "</pre>";
-    
 //     die;
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     $users=array();
     // Conectarse al DBMS
     $link = mysqli_connect($config['host'],
@@ -54,13 +42,13 @@ function getUser($config, $id)
     // Cerra la coneccion
     mysqli_close($link);
 
-     echo "<pre> Users:";
-             print_r($users);
-     echo "</pre>";            
+//      echo "<pre> Users:";
+//              print_r($users);
+//      echo "</pre>";            
 
-    echo "<pre>Config:";
-       print_r($row);
-    echo "</pre>";
+//     echo "<pre>Config:";
+//        print_r($row);
+//     echo "</pre>";
  //    die;
     return $users['iduser'];
 }
