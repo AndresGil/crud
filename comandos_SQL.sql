@@ -31,7 +31,7 @@ if ($stmt = $con->prepare($query)) {
 
 
 */
-
+/*
 select * from user, city,gender where idcity=city_idcity && gender_idgender=idgender;
 
 
@@ -54,17 +54,21 @@ delete user.*
 
 select * from user_has_transport;
 
+*/
 
+delete from user_has_transport where user_iduser="1429872254";
+delete from user_has_language where user_iduser="1429872254";
+delete user.* from user where iduser="1429872254";
 
+select * from user;
 
+delete user_has_transport.* from user_has_transport;
 
-
-
-
-
-
-
-
-
-
+INSERT INTO user SET iduser='".time()."',
+					 name = 'Andres',
+                     email='sr.gil.arias@gmail.com',
+					 password='chingale',
+                     description='Zumbao perdido con tanto php',
+                     gender_idgender='1',
+                     city_idcity='1';
 

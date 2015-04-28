@@ -1,15 +1,17 @@
 <?php
-function getUser($config, $id)
+function getUser($config, $iduser)//id
 {
   
-//     echo "<\br> Esto es getUser <\br>";
-//     echo "<pre>Id:";
-//     print_r($id);
-//     echo "</pre>";   
+    echo " Esto es getUser ";
+
 //     echo "<pre>Config:";
-//     print_r($config);
+//         print_r($config);
 //     echo "</pre>";
-//     die;
+    
+//     echo "<pre>Iduser:";
+//          print_r($iduser);
+//     echo "</pre>";
+//      die;
   
     $users=array();
     // Conectarse al DBMS
@@ -22,22 +24,26 @@ function getUser($config, $id)
     mysqli_select_db($link, $config['database']);
 
     // Crear la consulta
- //   $query = "SELECT * FROM user where iduser=\". $id .\"";
-    $query = "SELECT * FROM user";
+    $query = "SELECT * FROM user where iduser=\". $iduser .\"";
+ //   $query = "SELECT * FROM user";
 
     // Enviar la consulta
     $result = mysqli_query($link, $query);
 
     // Recorrer el recordset
-    $contador=0;
+
     while($row = mysqli_fetch_assoc($result))
     {
-        if($contador==$id) //si eres la fila que quiero te guardo
+        if (in_array($iduser,$row))
         {
-            $users=$row;
+            $users=$row;// si eres el usuarui que busco entonces te guardo
+//             echo "Te encontre iduser= $iduser ";
+//             echo "<pre>";
+//                 print_r($row);
+//             echo "</pre>";    
+//             die;
         }
-        $contador++;
-     }
+    }
 
     // Cerra la coneccion
     mysqli_close($link);
@@ -50,7 +56,7 @@ function getUser($config, $id)
 //        print_r($row);
 //     echo "</pre>";
  //    die;
-    return $users['iduser'];
+    return $users; //me envias todos los datos del usuario
 }
     
     

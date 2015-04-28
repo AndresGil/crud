@@ -1,6 +1,5 @@
 <?php
 
-
 define ("APPLICATION_PATH", "../modules/Application");
 define ("VENDOR_PATH", "../vendor");
 define ("ROOT_PATH", "../");
@@ -9,7 +8,7 @@ include ("../vendor/acl/Core/src/Core/readConfig.php");
 
 $config = readConfig('../configs/application.config.php');
 
-
+// echo "CRUD Index.php ";
 // echo "<pre>config: ";
 //     print_r($config);
 // echo "</pre>";
@@ -27,7 +26,7 @@ $request = parseUrl($_SERVER['REQUEST_URI']);
 
 switch($request['controller'])
 {
-    case 'index':
+    
     case 'users':
         include ("../modules/Application/src/Application/Controller/users.php");
     break;
@@ -35,7 +34,7 @@ switch($request['controller'])
     case 'home':
         include ("../modules/Application/src/Application/Controller/home.php");
     break;
-    
+    case 'index':
     case 'crud':
         include ("../modules/Application/src/Application/Controller/crud.php");
     break;

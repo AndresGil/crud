@@ -4,13 +4,20 @@ $user = $viewData['user'];
 echo "<pre>";
 print_r($user);
 echo "</pre>";
-echo "Request: ".$request['params']['id'];
-die;
+
+echo "<pre>";
+print_r($viewData);
+echo "</pre>";
+
+
+// echo "Request: ".$request['params']['id'];
+// die;
 
 ?>
 <form method ="POST" action="/crud/delete">
-    Estas seguro que quieres borrar el usuario: <?=$user['name'];?>?
-    <input type="hidden" name="id" value="<?=$request['params']['id'];?>"/>
+    Estas seguro que quieres borrar el usuario:?
+ <!--   <input type="hidden" name="id" value="<?=$request['params']['id'];?>"/> -->
+        <input type="hidden" name="id" value="<?=$user;?>"/>
     <input name="borrar" value="SI" type ="submit"/>
     <input name="borrar" value="NO" type ="submit"/>
 </form>

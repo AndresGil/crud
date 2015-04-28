@@ -3,7 +3,7 @@
 include (APPLICATION_PATH."/src/Application/Model/db/getTransports.php");
 include (VENDOR_PATH."/acl/Core/src/Core/Forms/readFields.php");
 
-
+$config=array();
 $transports = getTransports($config);
 
 return array(

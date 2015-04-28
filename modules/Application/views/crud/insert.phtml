@@ -1,8 +1,14 @@
 <?php 
 
+echo "Estas en Insert.phtml ";
+
+echo "<pre>POST: ";
+    print_r($_POST);
+echo "</pre>";
+
 include(VENDOR_PATH.'/acl/Core/src/Core/crud/RenderForm.php');
 
-$userForm = include (APPLICATION_PATH.'/src/Application/crud/UserForm.php');
+$userForm = include (APPLICATION_PATH.'/src/Application/Forms/UserForm.php');
 
 $html = renderForm($userForm, '/crud/insert', 'POST', array('id'=>0));
 

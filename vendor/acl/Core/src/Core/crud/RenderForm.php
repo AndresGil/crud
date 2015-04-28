@@ -137,9 +137,7 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     			            $html .= "<input type=\"checkbox\" name=\"".$key."[]"."\" value=\"".$value2."\">";
     			            $html .= $key2."<br />"."\n";
     			        }
-    			        
-    			         
-    			    }
+      			    }
     			    $html.="</li>";
     			    break;
     	    
@@ -190,9 +188,7 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     			 $data2=explode("|", $stringdata);
     			    foreach($value['options'] as $key2 => $value2)
     			    {
-    			        
-    			        
-    			        //si es un update seleccionamos los valores antiguos
+      			        //si es un update seleccionamos los valores antiguos
     			         if(empty($_GET)=="")
     			         {
     			                 //Los + S_GET los convierte en espacios,hay que volver a convertirlos en +(c++)
@@ -204,7 +200,6 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     			                    $html .= $key2."</option><br />"."\n";
     			                    next($data2);
     			                    
-    			                    
     			                 }
     			                 else
     			                 {
@@ -212,8 +207,7 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     			                     $html .= $key2."</option><br />"."\n";
     			                     
     			                 }
-    			                 
-    			              
+  
     			         }  
     			        //si no es un update comprobamos si es una opcion por defecto para seleccionarla
     			        elseif ($key2== 'default_option')
@@ -234,10 +228,7 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     		     //necesitamos un boton para enviar los datos a procesa.php
     			 $html.="<input type=\"submit\" name=\"".$value2."\"/>"."\n";
     			 break;
-               
-                 
-    			
-    		
+  		
     	}  
     	       //nos movemos una posicion dentro del array $data
     	       next($data);

@@ -26,12 +26,32 @@ function parseUrl($url)
             'update',
             'delete',
             'select'
+        ),
+        'crud' => array(
+            'insert',
+            'update',
+            'delete',
+            'select'
         )
     );
-     
+
+//     echo "<pre>";
+//         print_r($controler);
+//     echo "</pre>";
+//     die;
+    
+    
     // Descomponer la url
     $components = explode('/', $url);
-     
+
+    echo "ParseURL";
+    echo "<pre>";
+        print_r($components);
+    echo "</pre>";    
+    die;
+    
+    
+    
     // Determinar el controlador
     if(file_exists(APPLICATION_PATH."/src/Application/Controller/".$components[1].".php"))
         $array['controller'] = $components[1];

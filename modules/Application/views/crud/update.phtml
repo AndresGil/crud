@@ -2,7 +2,7 @@
 $fieldsLine = $viewData['fieldsLine'];
 
 include (VENDOR_PATH.'/acl/Core/src/Core/crud/RenderForm.php');
-$formDefinition = include (APPLICATION_PATH.'/src/Application/crud/UserForm.php');
+$formDefinition = include (APPLICATION_PATH.'/src/Application/Forms/UserForm.php');
 $data = array();    //initialize the data as a array
 $userFieldsIndex = 0;
 foreach ($formDefinition as $fieldName => $fieldAttributes)

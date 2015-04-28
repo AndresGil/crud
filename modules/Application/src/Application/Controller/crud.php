@@ -31,12 +31,12 @@ switch($request['action'])
     break;
 
     case 'update':
-        echo "esto es update";
+        echo "esto es update en crud.php";
 
-        echo "<pre>";
-            print_r($request['params']['iduser']);
-        echo "</pre>";    
-        die;
+//         echo "<pre>";
+//             print_r($request['params']['iduser']);
+//         echo "</pre>";    
+//         die;
         
         
         if ($_POST)
@@ -65,7 +65,7 @@ switch($request['action'])
         }
         else
         {     
-            $user = getUser($config['database'], $request['params']['id']);
+            $user = getUser($config['database'], $request['params']['iduser']);
             $content = renderView("../modules/Application/views/crud/delete.phtml",
                 array('user'=>$user)
             );

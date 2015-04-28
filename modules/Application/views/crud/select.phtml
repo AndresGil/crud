@@ -1,5 +1,11 @@
 <?php 
 $users = $viewData['users'];
+Echo "Estas en Select.pthml";
+// echo "<pre>Users";    
+//     print_r($users);
+// echo "</pre>";
+
+
 ?>
 <h1 class="page-header">Users</h1>
 
@@ -10,12 +16,14 @@ $users = $viewData['users'];
         <tr>
            <?php 
             //$user = explode(",", $user);
-            foreach ($user as $value):?>               
+            foreach ($user as $iduser => $value):
+                
+            ?>               
                 <td><?php echo $value;?></td>
             <?php endforeach; ?>
             <td>
-                <a href="/crud/update/id/<?=$id;?>">Update</a> | 
-                <a href="/crud/delete/id/<?=$id;?>">Delete</a>
+                <a href="/crud/update/iduser/<?=$user['iduser'];?>">Update</a> | 
+                <a href="/crud/delete/iduser/<?=$user['iduser'];?>">Delete</a>
             </td>
         </tr>
     <?php endforeach; ?>
