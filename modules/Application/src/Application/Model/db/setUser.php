@@ -2,17 +2,17 @@
 
 function setUser($data, $config)
 {
-     echo "<\br> Esto es setUser <\br>";
-    echo "<pre>Id:";
-    print_r($id);
-    echo "</pre>";
+//      echo "<\br> Esto es setUser <\br>";
+//     echo "<pre>Id:";
+//     print_r($id);
+//     echo "</pre>";
     
     
-    echo "<pre>Config:";
-    print_r($config);
-    echo "</pre>";
+//     echo "<pre>Config:";
+//     print_r($config);
+//     echo "</pre>";
     
-    die;    
+//     die;    
     // Conectarse al DBMS
     $link = mysqli_connect($config['host'],
         $config['user'],

@@ -24,9 +24,9 @@ function getUser($config, $iduser)//id
     mysqli_select_db($link, $config['database']);
 
     // Crear la consulta
-    $query = "SELECT * FROM user where iduser=\". $iduser .\"";
+    $query = "SELECT * FROM user where iduser=\"$iduser\"";
  //   $query = "SELECT * FROM user";
-
+echo "Query ". $query;
     // Enviar la consulta
     $result = mysqli_query($link, $query);
 
@@ -34,23 +34,21 @@ function getUser($config, $iduser)//id
 
     while($row = mysqli_fetch_assoc($result))
     {
-        if (in_array($iduser,$row))
-        {
-            $users=$row;// si eres el usuarui que busco entonces te guardo
+                  $users=$row;// si eres el usuarui que busco entonces te guardo
 //             echo "Te encontre iduser= $iduser ";
 //             echo "<pre>";
 //                 print_r($row);
 //             echo "</pre>";    
 //             die;
-        }
+      
     }
 
     // Cerra la coneccion
     mysqli_close($link);
 
-//      echo "<pre> Users:";
-//              print_r($users);
-//      echo "</pre>";            
+     echo "<pre> Users:";
+             print_r($users);
+     echo "</pre>";            
 
 //     echo "<pre>Config:";
 //        print_r($row);

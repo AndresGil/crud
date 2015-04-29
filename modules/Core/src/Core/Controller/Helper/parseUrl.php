@@ -44,11 +44,11 @@ function parseUrl($url)
     // Descomponer la url
     $components = explode('/', $url);
 
-    echo "ParseURL";
-    echo "<pre>";
-        print_r($components);
-    echo "</pre>";    
-    die;
+//     echo "ParseURL";
+//     echo "<pre>";
+//         print_r($components);
+//     echo "</pre>";    
+//     die;
     
     
     

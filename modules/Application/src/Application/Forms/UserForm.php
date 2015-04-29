@@ -1,14 +1,24 @@
 <?php
 
 include (APPLICATION_PATH."/src/Application/Model/db/getTransports.php");
-include (VENDOR_PATH."/acl/Core/src/Core/Forms/readFields.php");
+include (VENDOR_PATH."/acl/Core/src/Core/crud/readFields.php");
 
-$config=array();
-$transports = getTransports($config);
+// $config=array();
+
+$config = readConfig('../configs/application.config.php');
+
+$transports = getTransports($config['database']);
+
+
+echo "<\br> Estas en UserForm ";
+
+//die;
+ 
+
 
 return array(
     'id'=>array(
-        'type'=>'hidden',
+//         'type'=>'hidden',
         'filters'=> array('Stringtrim', 'StripTags', 'Escape'),
         'validators' => array ('required'=>true)
     ),
@@ -64,12 +74,12 @@ return array(
     'idtransport'=>array(
         'label'=>'Tipo de transporte',
         'type'=>'checkbox',
-//         'options'=>array('Coche'=>'coche',
-//                         'Bicicleta' =>'bicycle',
-//                         'Moto'=>'motorcycle'
-//         ),
-        'options'=> readFields($transports),
-        'validators'=>array('inArray'=>true)
+        'options'=>array('Coche'=>'coche',
+                        'Bicicleta' =>'bicycle',
+                        'Moto'=>'motorcycle'
+        ),
+//         'options'=> readFields($transports,$config['database']),
+        'validators'=>array('inArray'=>true)  
     ),
     'city'=>array(
         'label'=>'Ciudad',
@@ -95,5 +105,8 @@ return array(
         'type'=>'submit'                
     ),
     
-    
+
 );
+
+
+

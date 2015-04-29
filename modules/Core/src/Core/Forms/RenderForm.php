@@ -11,6 +11,13 @@
  * 
  */
 
+echo "Estas en renderForm ";
+echo "<pre>";
+    print_r($users);
+echo "</pre>";
+die;    
+
+
 function renderForm($formDefinition, $action, $method='post', $data = array())
 {
     //Crear string Html

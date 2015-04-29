@@ -18,7 +18,7 @@ echo "/n Estas en deleteUser.php /n";
         print_r($config);
     echo "</pre>";
     
-  die;  
+ // die;  
     
     
     
@@ -34,9 +34,19 @@ echo "/n Estas en deleteUser.php /n";
     // 2º delete from user_has_language where user_iduser="id1";
     // 3º delete user.* from user,gender,city where	iduser="id1" && idgender=gender_idgender && idcity=city_idcity;
 
-    $query = "delete from user_has_transport where user_iduser=\"".$id."\";
-               delete from user_has_language where user_iduser=\"".$id."\";
-               delete user.* from user where iduser=\"".$id."\";";
+    $query = "delete from user_has_transport where user_iduser=\"".$id."\"";
+    $result = mysqli_query($link, $query);
+        
+        
+    $query= "delete from user_has_language where user_iduser=\"".$id."\"";
+    $result = mysqli_query($link, $query);
+    
+    
+    $query="delete from user where iduser=\"".$id."\"";
+   
+//    echo "query" . $query;
+//    die;
+   
    // Enviar la consulta
     $result = mysqli_query($link, $query);
     // Recorrer el recordset

@@ -1,6 +1,8 @@
 <?php 
 $fieldsLine = $viewData['fieldsLine'];
 
+echo "Esto es update.phtml";
+
 include (VENDOR_PATH.'/acl/Core/src/Core/crud/RenderForm.php');
 $formDefinition = include (APPLICATION_PATH.'/src/Application/Forms/UserForm.php');
 $data = array();    //initialize the data as a array
@@ -15,5 +17,17 @@ foreach ($formDefinition as $fieldName => $fieldAttributes)
 //$data['id'] = $id;
 $data['id'] = $id;
 
+// echo "<pre>Value ";
+//     print_r($value);
+// echo "</pre>";
+
+// echo "<pre> Data: ";
+//         print_r($data);
+// echo "</pre>";
+
+// echo "<pre>usersFieldsIndex: ";
+//     print_r($userFieldsIndex);
+// echo "</pre>";
+// die;
 
 echo(renderForm($formDefinition, '/crud/update', 'post', $data));

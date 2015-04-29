@@ -2,10 +2,10 @@
 
 function getTransports($config)
 {
-  echo "<pre>";  
-    print_r($config);
-  echo "</pre>";
-  die;  
+//   echo "<pre>";  
+//     print_r($config);
+//   echo "</pre>";
+//   die;  
     
     // Conectarse al DBMS
         $link = mysqli_connect($config['host'], 

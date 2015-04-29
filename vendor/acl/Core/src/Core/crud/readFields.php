@@ -2,14 +2,6 @@
 function readFields($transports,$config)
 {
 
-    /**
-     * Lee los valores del campo transporte de la base de datos. De la tabla transporte.
-     * 
-     * Los guarda al array users.
-     */
-    
-    
-    
 //     echo "<pre>traports";
 //         print_r($transports);
 //    echo "</pre>"; 
@@ -56,7 +48,7 @@ function readFields($transports,$config)
     mysqli_close($link);
     
 //     ECHO "<PRE> USERS:";
-//     PRINT_R($users);
+//      PRINT_R($users);
 //     ECHO "</PRE>";
 //     DIE();
 }

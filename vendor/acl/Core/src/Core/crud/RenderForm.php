@@ -11,8 +11,27 @@
  * 
  */
 
+echo "Estas en renderForm";
+
+
 function renderForm($formDefinition, $action, $method='post', $data = array())
 {
+//     echo "<pre>Formdefinition: ";
+//          print_r($formDefinition);
+//     echo "</pre>";
+//     echo "<pre>action: ";
+//          print_r($action);
+//     echo "</pre>";
+    
+//     echo "<pre>data: ";
+//       print_r($data);
+//     echo "</pre>";
+//     die;
+    
+    
+    
+    
+    
     //Crear string Html
     //primero construir el form
 	$html = "<form method=\"".$method."\" action=\"".$action."\">"."\n";
@@ -228,7 +247,12 @@ function renderForm($formDefinition, $action, $method='post', $data = array())
     		     //necesitamos un boton para enviar los datos a procesa.php
     			 $html.="<input type=\"submit\" name=\"".$value2."\"/>"."\n";
     			 break;
-  		
+//--------------
+//     		case 'index':
+//     		    break;
+    			 
+    			 
+//-----------------    			 
     	}  
     	       //nos movemos una posicion dentro del array $data
     	       next($data);
